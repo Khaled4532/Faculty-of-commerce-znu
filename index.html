@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>الدراسات التجارية | كلية التجارة - جامعة الزقازيق الأهلية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cairo', 'Segoe UI', sans-serif;
+        }
+        body {
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        html.dark body {
+            background-color: #0b1120;
+            color: #f1f5f9;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        html.dark .glass-header {
+            background: rgba(15, 23, 42, 0.9);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 10% 20%, #0f2b3d, #0a1e2c);
+        }
+        .video-card {
+            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.25);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 35px 45px -18px rgba(0,0,0,0.35);
+        }
+        .dark-toggle {
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .dark-toggle:hover {
+            transform: rotate(12deg) scale(1.08);
+        }
+        @keyframes fadeSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-hero {
+            animation: fadeSlideUp 0.7s ease forwards;
+        }
+        @keyframes fadeScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .fade-scale {
+            animation: fadeScale 0.5s ease-out forwards;
+        }
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a2b3e 0%, #1e4a76 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        html.dark #splash-screen {
+            background: linear-gradient(135deg, #071a24 0%, #0f2f47 100%);
+        }
+        .splash-content {
+            text-align: center;
+            animation: pulseGlow 1.8s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% {
+                opacity: 0.7;
+                transform: scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.05);
+                text-shadow: 0 0 20px rgba(255, 200, 0, 0.4);
+            }
+        }
+        .splash-icon {
+            font-size: 4.5rem;
+            color: #ffd966;
+            margin-bottom: 1rem;
+        }
+        .footer-link {
+            transition: all 0.2s ease;
+        }
+        .footer-link:hover {
+            color: #facc15;
+            transform: translateY(-2px);
+        }
+        .fullscreen-btn {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: rgba(0,0,0,0.05);
+            backdrop-filter: blur(4px);
+        }
+        .fullscreen-btn:hover {
+            transform: scale(1.1);
+            background: rgba(0,0,0,0.1);
+        }
+        html.dark .fullscreen-btn {
+            background: rgba(255,255,255,0.1);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <div id="splash-screen">
+        <div class="splash-content">
+            <div class="splash-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h2 class="text-white text-3xl md:text-4xl font-bold mb-2">جامعة الزقازيق الأهلية</h2>
+            <p class="text-yellow-200 text-lg">كلية التجارة • الدراسات التجارية</p>
+            <div class="mt-6 flex justify-center">
+                <div class="w-12 h-12 border-4 border-white/30 border-t-yellow-400 rounded-full animate-spin"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header shadow-sm transition-all">
+        <div class="container mx-auto px-5 md:px-8 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-gradient-to-br from-blue-800 to-blue-600 text-white rounded-xl w-10 h-10 flex items-center justify-center shadow-md">
+                    <i class="fas fa-landmark text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm md:text-lg font-extrabold text-blue-900 dark:text-blue-300 leading-tight">جامعة الزقازيق الأهلية</h1>
+                    <p class="text-[10px] md:text-xs text-gray-500 dark:text-gray-400">كلية التجارة • الدراسات التجارية</p>
+                </div>
+            </div>
+            <button id="darkModeBtn" class="dark-toggle bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-2.5 rounded-full shadow-md transition border border-gray-200 dark:border-gray-700">
+                <i id="darkIcon" class="fas fa-moon text-blue-800 dark:text-yellow-300 text-base"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <section class="hero-gradient text-white py-12 md:py-20 lg:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <div class="animate-hero">
+                    <h2 class="hero-title text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4">
+                        📘 الدراسات التجارية <span class="text-yellow-300">Business Studies</span>
+                    </h2>
+                    <p class="text-base md:text-lg lg:text-xl max-w-2xl mx-auto opacity-90 mt-2">
+                        شرح متكامل لتصحيح الأخطاء المحاسبية، انضمام الشريك، المصروفات النثرية والتسويات المالية
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-5 py-16 md:py-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="video-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl transition-all">
+                    <div class="video-container" id="videoWrapper">
+                        <iframe id="youtubeFrame" 
+                                src="https://www.youtube.com/embed/1GZe_NiWjH8?si=_vc5tdbYYesXbYef&autoplay=1&rel=0&modestbranding=1&playsinline=1&controls=2&showinfo=0&origin=https://your-domain.com" 
+                                title="شرح منهج الدراسات التجارية - جامعة الزقازيق الأهلية" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-5 md:p-7 text-center bg-white dark:bg-gray-800">
+                        <div class="flex justify-between items-center flex-wrap gap-3">
+                            <h3 class="text-xl md:text-2xl font-bold text-blue-900 dark:text-white flex items-center gap-2">
+                                <i class="fas fa-play-circle text-yellow-500"></i>
+                                شرح منهج مادة الدراسات التجارية الكامل
+                            </h3>
+                            <button id="fullscreenBtn" class="fullscreen-btn p-2 rounded-full shadow-md transition text-blue-800 dark:text-yellow-300">
+                                <i class="fas fa-expand text-lg"></i>
+                            </button>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base mt-3 max-w-lg mx-auto">
+                            تصحيح الأخطاء المحاسبية | انضمام شريك | المصروفات النثرية | التسويات البنكية
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-300 pt-10 pb-6 mt-12 border-t border-gray-800/60">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-right">
+                    <div class="flex items-center gap-2 justify-center md:justify-start">
+                        <i class="fas fa-university text-yellow-500 text-xl"></i>
+                        <span class="text-white font-bold text-sm">جامعة الزقازيق الأهلية</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-2">© 2026 كلية التجارة - جميع الحقوق محفوظة</p>
+                </div>
+                
+                <div class="flex flex-col items-center gap-2">
+                    <div class="flex items-center gap-1 text-sm bg-gray-800/50 px-4 py-2 rounded-full">
+                        <i class="fas fa-code text-blue-400"></i>
+                        <span class="font-medium text-gray-200">Developed by Khaled Hamdy</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-gray-400">
+                        <i class="fas fa-phone-alt"></i>
+                        <span dir="ltr">+201112141562</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-5">
+                    <a href="https://chat.whatsapp.com/B88WZZ3dM5O7r4xQoMRdMl" target="_blank" rel="noopener noreferrer" class="footer-link text-gray-400 hover:text-green-400 text-2xl transition-transform inline-block">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61579862574654" target="_blank" rel="noopener noreferrer" class="footer-link text-gray-400 hover:text-blue-400 text-2xl transition-transform inline-block">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center text-[11px] text-gray-500 mt-6 pt-4 border-t border-gray-800/40">
+                منصة تعليمية متخصصة لطلاب كلية التجارة – جامعة الزقازيق الأهلية
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const splash = document.getElementById('splash-screen');
+        if (splash) {
+            setTimeout(() => {
+                splash.style.opacity = '0';
+                setTimeout(() => {
+                    splash.style.visibility = 'hidden';
+                    splash.remove();
+                }, 600);
+            }, 1800);
+        }
+
+        (function(){
+            const btn = document.getElementById('darkModeBtn');
+            const icon = document.getElementById('darkIcon');
+            const html = document.documentElement;
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                html.classList.add('dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                html.classList.remove('dark');
+                icon.classList.add('fa-moon');
+                icon.classList.remove('fa-sun');
+            }
+
+            btn.addEventListener('click', () => {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                } else {
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                }
+            });
+        })();
+
+        const iframe = document.getElementById('youtubeFrame');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframe.webkitRequestFullscreen) {
+                    iframe.webkitRequestFullscreen();
+                } else if (iframe.msRequestFullscreen) {
+                    iframe.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+    </script>
+</body>
+</html>
