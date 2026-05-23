@@ -3,24 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>الدراسات التجارية | كلية التجارة - جامعة الزقازيق الأهلية</title>
+    <title>الرياضيات المالية والاستثمار | كلية التجارة - جامعة الزقازيق الأهلية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            font-family: 'Cairo', 'Segoe UI', sans-serif;
-        }
-        body {
-            transition: background-color 0.3s ease, color 0.2s ease;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        html.dark body {
-            background-color: #0b1120;
-            color: #f1f5f9;
-        }
+        * { font-family: 'Cairo', sans-serif; }
+        body { transition: background-color 0.3s ease, color 0.2s ease; }
+        html { scroll-behavior: smooth; }
+        html.dark body { background-color: #0b1120; color: #f1f5f9; }
         .glass-header {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -33,46 +24,80 @@
         .hero-gradient {
             background: radial-gradient(circle at 10% 20%, #0f2b3d, #0a1e2c);
         }
-        .video-card {
-            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.25);
+        .chapter-card {
+            background: white;
+            border-radius: 1.5rem;
             transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
         }
-        .video-card:hover {
+        .chapter-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 35px 45px -18px rgba(0,0,0,0.35);
+            box-shadow: 0 30px 40px -18px rgba(0,0,0,0.2);
         }
-        .dark-toggle {
+        html.dark .chapter-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+        }
+        .formula-box {
+            background: #f8fafc;
+            border-right: 4px solid #f0a500;
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            font-family: monospace;
+            font-size: 1rem;
+            direction: ltr;
+            text-align: left;
+            margin: 0.75rem 0;
+        }
+        html.dark .formula-box {
+            background: #0f172a;
+            border-right-color: #facc15;
+        }
+        .term-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+            gap: 0.5rem;
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin: 0.75rem 0;
+        }
+        html.dark .term-grid {
+            background: #0f172a;
+        }
+        .term-item {
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #cbd5e1;
+            padding: 0.25rem 0;
+        }
+        html.dark .term-item {
+            border-bottom-color: #475569;
+        }
+        .solution-toggle {
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: 0.2s;
+            background: #e2e8f0;
         }
-        .dark-toggle:hover {
-            transform: rotate(12deg) scale(1.08);
+        html.dark .solution-toggle {
+            background: #334155;
         }
-        @keyframes fadeSlideUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .solution-content {
+            display: none;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
         }
-        .animate-hero {
-            animation: fadeSlideUp 0.7s ease forwards;
+        .solution-content.show {
+            display: block;
         }
-        @keyframes fadeScale {
-            0% {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+        .footer-link {
+            transition: all 0.2s ease;
         }
-        .fade-scale {
-            animation: fadeScale 0.5s ease-out forwards;
+        .footer-link:hover {
+            color: #facc15;
+            transform: translateY(-2px);
         }
         #splash-screen {
             position: fixed;
@@ -95,244 +120,183 @@
             animation: pulseGlow 1.8s infinite alternate;
         }
         @keyframes pulseGlow {
-            0% {
-                opacity: 0.7;
-                transform: scale(0.98);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1.05);
-                text-shadow: 0 0 20px rgba(255, 200, 0, 0.4);
-            }
+            0% { opacity: 0.7; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1.05); text-shadow: 0 0 20px rgba(255,200,0,0.4); }
         }
         .splash-icon {
             font-size: 4.5rem;
             color: #ffd966;
             margin-bottom: 1rem;
         }
-        .footer-link {
-            transition: all 0.2s ease;
-        }
-        .footer-link:hover {
-            color: #facc15;
-            transform: translateY(-2px);
-        }
-        .fullscreen-btn {
+        .dark-toggle {
             cursor: pointer;
-            transition: all 0.2s ease;
-            background: rgba(0,0,0,0.05);
-            backdrop-filter: blur(4px);
+            transition: all 0.25s ease;
         }
-        .fullscreen-btn:hover {
-            transform: scale(1.1);
-            background: rgba(0,0,0,0.1);
+        .dark-toggle:hover {
+            transform: rotate(12deg) scale(1.08);
         }
-        html.dark .fullscreen-btn {
-            background: rgba(255,255,255,0.1);
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 1.5rem;
-            background: #000;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        @media (max-width: 640px) {
-            .hero-title {
-                font-size: 1.75rem;
-            }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 1.75rem; }
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
-    <div id="splash-screen">
-        <div class="splash-content">
-            <div class="splash-icon">
-                <i class="fas fa-graduation-cap"></i>
+<!-- شاشة البداية المؤقتة (Splash Screen) -->
+<div id="splash-screen">
+    <div class="splash-content">
+        <div class="splash-icon"><i class="fas fa-chart-line"></i></div>
+        <h2 class="text-white text-3xl md:text-4xl font-bold mb-2">جامعة الزقازيق الأهلية</h2>
+        <p class="text-yellow-200 text-lg">كلية التجارة • الرياضيات المالية والاستثمار</p>
+        <div class="mt-6 flex justify-center"><div class="w-12 h-12 border-4 border-white/30 border-t-yellow-400 rounded-full animate-spin"></div></div>
+    </div>
+</div>
+
+<!-- رأس الصفحة (Header) -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-header shadow-sm transition-all">
+    <div class="container mx-auto px-5 md:px-8 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="bg-gradient-to-br from-blue-800 to-blue-600 text-white rounded-xl w-10 h-10 flex items-center justify-center shadow-md"><i class="fas fa-landmark text-lg"></i></div>
+            <div><h1 class="text-sm md:text-lg font-extrabold text-blue-900 dark:text-blue-300 leading-tight">جامعة الزقازيق الأهلية</h1><p class="text-[10px] md:text-xs text-gray-500 dark:text-gray-400">كلية التجارة • الرياضيات المالية والاستثمار</p></div>
+        </div>
+        <button id="darkModeBtn" class="dark-toggle bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-2.5 rounded-full shadow-md transition border border-gray-200 dark:border-gray-700"><i id="darkIcon" class="fas fa-moon text-blue-800 dark:text-yellow-300 text-base"></i></button>
+    </div>
+</header>
+
+<main class="pt-20">
+    <!-- القسم الترحيبي (Hero Section) -->
+    <section class="hero-gradient text-white py-12 md:py-20 lg:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <div class="animate-hero">
+                <h2 class="hero-title text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4">📊 الرياضيات المالية والاستثمار <span class="text-yellow-300">Financial Mathematics</span></h2>
+                <p class="text-base md:text-lg lg:text-xl max-w-2xl mx-auto opacity-90 mt-2">شرح مبسط لكل فصل: القوانين، مدلولات الرموز، شرح تفصيلي، ثم تمارين محلولة – إعداد خصيصاً لطلاب كلية التجارة جامعة الزقازيق الأهلية (الامتحان بالانجليزي، الشرح ثنائي اللغة).</p>
             </div>
-            <h2 class="text-white text-3xl md:text-4xl font-bold mb-2">جامعة الزقازيق الأهلية</h2>
-            <p class="text-yellow-200 text-lg">كلية التجارة • الدراسات التجارية</p>
-            <div class="mt-6 flex justify-center">
-                <div class="w-12 h-12 border-4 border-white/30 border-t-yellow-400 rounded-full animate-spin"></div>
+        </div>
+    </section>
+
+    <div class="container mx-auto px-5 py-10 space-y-12 max-w-6xl">
+        
+        <!-- 1️⃣ الفصل الأول: الفائدة البسيطة (Simple Interest) -->
+        <div class="chapter-card p-6">
+            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5">
+                <i class="fas fa-percent text-2xl text-yellow-600"></i>
+                <h2 class="text-2xl font-bold text-blue-900 dark:text-white">📘 الفصل الأول: الفائدة البسيطة (Simple Interest)</h2>
+            </div>
+            <!-- ✅ تم تحديث الفيديو هنا بالرابط الجديد -->
+            <div class="mb-6">
+                <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/GuSW7xTkYIU" title="شرح الفائدة البسيطة (Simple Interest) - رياضيات مالية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="space-y-5">
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📌 القوانين (Laws)</h3><div class="formula-box">I = p × r × t</div><div class="formula-box">S = p + I = p (1 + r t)</div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🔠 مدلولات الرموز (Notation)</h3><div class="term-grid"><div class="term-item"><span class="font-mono font-bold">I</span><span>Simple Interest / الفائدة البسيطة</span></div><div class="term-item"><span class="font-mono font-bold">p</span><span>Principal / أصل المال (القيمة الحالية)</span></div><div class="term-item"><span class="font-mono font-bold">r</span><span>Annual interest rate / سعر الفائدة السنوي</span></div><div class="term-item"><span class="font-mono font-bold">t</span><span>Time in years / الزمن بالسنوات</span></div><div class="term-item"><span class="font-mono font-bold">S</span><span>Future value / القيمة المستقبلية</span></div></div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📖 الشرح المفصل (Detailed Explanation)</h3><p class="text-gray-700 dark:text-gray-200 leading-relaxed">الفائدة البسيطة هي فائدة تحسب على أصل المال فقط طوال فترة القرض. يستخدم القانون <span class="font-mono bg-gray-200 dark:bg-gray-700 px-1 rounded">I = p × r × t</span>. يجب تحويل الزمن إلى سنوات: إذا كان بالأشهر نقسم على 12، وإذا بالأيام نقسم على 365 (سنة بسيطة) أو 366 (كبيسة). يوم الإيداع يُحتسب ويوم السحب لا يُحتسب. القيمة المستقبلية هي أصل المال مضافاً إليه الفائدة: <span class="font-mono">S = p + I</span>.</p></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🧮 تمارين محلولة (Solved Exercises)</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between items-start flex-wrap"><div><span class="font-bold">تمرين 1:</span> أوجد الفائدة البسيطة على 1000$ لمدة 10 سنوات بسعر 10% سنوياً.</div><button class="solution-toggle text-sm px-3 py-1 rounded-full" data-target="s1"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s1" class="solution-content"><p class="font-bold">الحل:</p><p>I = 1000 × 0.10 × 10 = <strong>1000$</strong>.</p><p class="font-bold mt-1">Solution:</p><p>I = 1000 × 0.10 × 10 = $1000.</p></div></div>
+                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 2:</span> قرض 100,000$ سدد 120,000$ بعد 180 يوم في سنة بسيطة (365 يوم). أوجد سعر الفائدة.</div><button class="solution-toggle" data-target="s2"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s2" class="solution-content"><p>I = 20000, t = 180/365 → r = I/(p·t) = 20000/(100000×180/365) = 0.4056 = <strong>40.56%</strong>.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2️⃣ الفصل الثاني: القيمة المستقبلية والفائدة العادية/الدقيقة (Future Value & Interest Types) -->
+        <div class="chapter-card p-6">
+            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-chart-line text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">📈 الفصل الثاني: القيمة المستقبلية & أنواع الفائدة (Future Value & Interest Types)</h2></div>
+            <!-- فيديو القيمة المستقبلية الجزء الأول والثاني -->
+            <div class="mb-6 space-y-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-2">🎥 الجزء الأول: شرح القيمة المستقبلية (Future Value)</h3>
+                    <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/QBzZghJ-vZ8" title="شرح القيمة المستقبلية (Future Value) - الجزء الأول" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-2">🎥 الجزء الثاني: شرح القيمة المستقبلية (Future Value) - تكملة</h3>
+                    <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/iMAY_J0Z67E" title="شرح القيمة المستقبلية (Future Value) - الجزء الثاني" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="space-y-5">
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📌 القوانين</h3><div class="formula-box">S = p (1 + r t)</div><div class="formula-box">Iₒ = p × r × (d / 360) &nbsp;&nbsp;(Ordinary interest)</div><div class="formula-box">Iₑ = p × r × (d / 365) &nbsp;&nbsp;(Exact interest)</div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🔠 مدلولات الرموز</h3><div class="term-grid"><div class="term-item"><span>d</span><span>عدد الأيام (number of days)</span></div><div class="term-item"><span>Iₒ</span><span>فائدة عادية (سنة 360 يوم)</span></div><div class="term-item"><span>Iₑ</span><span>فائدة دقيقة (سنة 365/366)</span></div></div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📖 الشرح المفصل</h3><p class="text-gray-700 dark:text-gray-200">القيمة المستقبلية (S) هي المبلغ الكلي بعد إضافة الفائدة البسيطة. الفائدة العادية تستخدم سنة تجارية 360 يوماً، بينما الفائدة الدقيقة تستخدم السنة الفعلية 365 أو 366 يوماً. دائماً Iₒ أكبر من Iₑ، والنسبة بينهما 73/72. تستخدم البنوك أحياناً الحد الأدنى للرصيد الشهري أو اليومي لحساب الفائدة.</p></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🧮 تمارين</h3>
+                    <div class="space-y-4"><div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 1:</span> 500$ لمدة 60 يوم، 11% سنوياً. أوجد S , Iₒ , Iₑ.</div><button class="solution-toggle" data-target="s21"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s21" class="solution-content"><p>S = 500(1+0.11×60/365)=509.04$ , Iₒ = 500×0.11×60/360=9.17$ , Iₑ = 9.04$.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3️⃣ الفصل الثالث: الفائدة المركبة (Compound Interest) -->
+        <div class="chapter-card p-6">
+            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-chart-simple text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">📊 الفصل الثالث: الفائدة المركبة (Compound Interest)</h2></div>
+            <!-- فيديو الفائدة المركبة (سيتم تحديثه لاحقاً عند توفره) -->
+            <div class="mb-6">
+                <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/PLACEHOLDER" title="فيديو شرح الفائدة المركبة - سيتم تحديثه لاحقاً" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mt-2 text-center">⚠️ سيتم إضافة فيديو شرح الفائدة المركبة قريباً</p>
+            </div>
+            <div class="space-y-5">
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📌 القوانين</h3><div class="formula-box">S = p (1 + i)ⁿ</div><div class="formula-box">p = S (1 + i)⁻ⁿ</div><div class="formula-box">i = jₘ / m  (سعر الفائدة لكل فترة)</div><div class="formula-box">المعدل الفعلي السنوي: 1 + j = (1 + i)ᵐ</div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🔠 الرموز</h3><div class="term-grid"><div class="term-item"><span>i</span><span>Interest rate per period / سعر الفترة</span></div><div class="term-item"><span>n</span><span>Number of periods / عدد الفترات</span></div><div class="term-item"><span>jₘ</span><span>Nominal rate convertible m times per year</span></div><div class="term-item"><span>j</span><span>Effective annual rate / المعدل الفعلي</span></div></div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📖 الشرح</h3><p class="text-gray-700 dark:text-gray-200">في الفائدة المركبة تضاف الفائدة إلى أصل المال في نهاية كل فترة وتحسب الفائدة على المبلغ الجديد. المبلغ المستقبلي S = p(1+i)ⁿ. كلما زاد عدد فترات التحويل (شهرية، ربع سنوية) زادت القيمة المستقبلية. المعدل الفعلي يعبر عن العائد الحقيقي بعد التحويلات.</p></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🧮 تمارين</h3>
+                    <div class="space-y-4"><div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 1:</span> استثمر 1000$ لمدة 3 سنوات بفائدة 8% سنوية مركبة. أوجد S.</div><button class="solution-toggle" data-target="s31"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s31" class="solution-content"><p>S = 1000(1.08)³ = 1259.71$ ، الفائدة المركبة = 259.71$.</p></div></div>
+                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 2:</span> 1000$ لمدة سنتين بفائدة 10% مركبة نصف سنوية.</div><button class="solution-toggle" data-target="s32"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s32" class="solution-content"><p>i = 0.05 , n = 4 , S = 1000(1.05)⁴ = 1215.51$.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4️⃣ الفصل الرابع: القيمة الحالية والخصم البسيط (Present Value & Simple Discount) -->
+        <div class="chapter-card p-6">
+            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-tag text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">💰 الفصل الرابع: القيمة الحالية والخصم البسيط (Present Value & Simple Discount)</h2></div>
+            <!-- فيديو القيمة الحالية والخصم البسيط (سيتم تحديثه لاحقاً عند توفره) -->
+            <div class="mb-6">
+                <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/PLACEHOLDER" title="فيديو شرح القيمة الحالية والخصم البسيط - سيتم تحديثه لاحقاً" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mt-2 text-center">⚠️ سيتم إضافة فيديو شرح القيمة الحالية والخصم البسيط قريباً</p>
+            </div>
+            <div class="space-y-5">
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📌 القوانين</h3><div class="formula-box">p = S / (1 + r t)</div><div class="formula-box">D = S × d × t</div><div class="formula-box">p = S (1 – d t)</div><div class="formula-box">العلاقة بين r و d : r = d / (1 – d t) , d = r / (1 + r t)</div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🔠 الرموز</h3><div class="term-grid"><div class="term-item"><span>D</span><span>Simple discount / الخصم البسيط</span></div><div class="term-item"><span>d</span><span>Annual discount rate / سعر الخصم السنوي</span></div></div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📖 الشرح</h3><p class="text-gray-700 dark:text-gray-200">القيمة الحالية هي المبلغ الذي يجب استثماره اليوم للحصول على قيمة مستقبلية معينة. الخصم البسيط هو تخفيض من القيمة المستقبلية بسعر خصم d. السعر المدفوع (القيمة الحالية) = S – D. هناك علاقة تحويل بين سعر الخصم وسعر الفائدة.</p></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🧮 تمارين</h3>
+                    <div class="space-y-4"><div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 1:</span> ما القيمة الحالية لمبلغ 20000$ يستحق بعد 18 شهراً بسعر فائدة 9% بسيطة.</div><button class="solution-toggle" data-target="s41"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s41" class="solution-content"><p>p = 20000/(1+0.09×1.5) = 20000/1.135 = 17621.15$.</p></div></div>
+                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 2:</span> سند قيمته 100000$ يستحق بعد 59 يوماً بسعر خصم 5%. أوجد الخصم والسعر.</div><button class="solution-toggle" data-target="s42"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s42" class="solution-content"><p>D = 100000×0.05×59/365 = 808.22$ , p = 100000 – 808.22 = 99191.78$.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5️⃣ معادلات القيمة (Equations of Value) -->
+        <div class="chapter-card p-6">
+            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-balance-scale text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">⚖️ معادلات القيمة (Equations of Value)</h2></div>
+            <div class="space-y-4">
+                <p class="text-gray-700 dark:text-gray-200">عند مقارنة مبالغ مستحقة في تواريخ مختلفة، نستخدم تاريخ محوري (focal date) ونحرك الأموال للأمام (بالضرب في (1+rt)) أو للخلف (بالقسمة). مبدأ تكافؤ القيم: قيمة المدفوعات = قيمة الديون في التاريخ المحوري.</p>
+                <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين نموذجي:</span> شخص عليه 500$ بعد 3 شهور و 200$ بعد 6 شهور. دفع 300$ حالاً. كم يدفع بعد سنة لتصفية الدين؟ (سعر الفائدة 10% بسيطة)</div><button class="solution-toggle" data-target="seq"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="seq" class="solution-content"><p>تاريخ محوري بعد سنة: 300(1+0.10×1) + X = 500(1+0.10×9/12) + 200(1+0.10×6/12) → 330 + X = 537.5 + 210 → X = <strong>417.5$</strong>.</p></div></div>
             </div>
         </div>
     </div>
+</main>
 
-    <header class="fixed top-0 left-0 right-0 z-50 glass-header shadow-sm transition-all">
-        <div class="container mx-auto px-5 md:px-8 py-3 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="bg-gradient-to-br from-blue-800 to-blue-600 text-white rounded-xl w-10 h-10 flex items-center justify-center shadow-md">
-                    <i class="fas fa-landmark text-lg"></i>
-                </div>
-                <div>
-                    <h1 class="text-sm md:text-lg font-extrabold text-blue-900 dark:text-blue-300 leading-tight">جامعة الزقازيق الأهلية</h1>
-                    <p class="text-[10px] md:text-xs text-gray-500 dark:text-gray-400">كلية التجارة • الدراسات التجارية</p>
-                </div>
-            </div>
-            <button id="darkModeBtn" class="dark-toggle bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-2.5 rounded-full shadow-md transition border border-gray-200 dark:border-gray-700">
-                <i id="darkIcon" class="fas fa-moon text-blue-800 dark:text-yellow-300 text-base"></i>
-            </button>
+<!-- تذييل الصفحة (Footer) -->
+<footer class="bg-gray-900 text-gray-300 pt-10 pb-6 mt-12 border-t border-gray-800/60">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-right"><div class="flex items-center gap-2 justify-center md:justify-start"><i class="fas fa-university text-yellow-500 text-xl"></i><span class="text-white font-bold text-sm">جامعة الزقازيق الأهلية</span></div><p class="text-xs text-gray-400 mt-2">© 2026 كلية التجارة - جميع الحقوق محفوظة</p></div>
+            <div class="flex flex-col items-center gap-2"><div class="flex items-center gap-1 text-sm bg-gray-800/50 px-4 py-2 rounded-full"><i class="fas fa-code text-blue-400"></i><span class="font-medium text-gray-200">Developed by Khaled Hamdy</span></div><div class="flex items-center gap-2 text-xs text-gray-400"><i class="fas fa-phone-alt"></i><span dir="ltr">+201112141562</span></div></div>
+            <div class="flex gap-5"><a href="https://chat.whatsapp.com/B88WZZ3dM5O7r4xQoMRdMl" target="_blank" class="footer-link text-gray-400 hover:text-green-400 text-2xl"><i class="fab fa-whatsapp"></i></a><a href="https://www.facebook.com/profile.php?id=61579862574654" target="_blank" class="footer-link text-gray-400 hover:text-blue-400 text-2xl"><i class="fab fa-facebook-f"></i></a></div>
         </div>
-    </header>
+        <div class="text-center text-[11px] text-gray-500 mt-6 pt-4 border-t border-gray-800/40">منصة تعليمية شاملة – جميع القوانين والرموز والتمارين المحلولة لمادة الرياضيات المالية والاستثمار، كلية التجارة جامعة الزقازيق الأهلية.</div>
+    </div>
+</footer>
 
-    <main class="pt-20">
-        <section class="hero-gradient text-white py-12 md:py-20 lg:py-24">
-            <div class="container mx-auto px-6 text-center">
-                <div class="animate-hero">
-                    <h2 class="hero-title text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4">
-                        📘 الدراسات التجارية <span class="text-yellow-300">Business Studies</span>
-                    </h2>
-                    <p class="text-base md:text-lg lg:text-xl max-w-2xl mx-auto opacity-90 mt-2">
-                        شرح متكامل لتصحيح الأخطاء المحاسبية، انضمام الشريك، المصروفات النثرية والتسويات المالية
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="container mx-auto px-5 py-16 md:py-20">
-            <div class="max-w-4xl mx-auto">
-                <div class="video-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl transition-all">
-                    <div class="video-container" id="videoWrapper">
-                        <iframe id="youtubeFrame" 
-                                src="https://www.youtube.com/embed/1GZe_NiWjH8?si=_vc5tdbYYesXbYef&autoplay=1&rel=0&modestbranding=1&playsinline=1&controls=2&showinfo=0&origin=https://your-domain.com" 
-                                title="شرح منهج الدراسات التجارية - جامعة الزقازيق الأهلية" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="p-5 md:p-7 text-center bg-white dark:bg-gray-800">
-                        <div class="flex justify-between items-center flex-wrap gap-3">
-                            <h3 class="text-xl md:text-2xl font-bold text-blue-900 dark:text-white flex items-center gap-2">
-                                <i class="fas fa-play-circle text-yellow-500"></i>
-                                شرح منهج مادة الدراسات التجارية الكامل
-                            </h3>
-                            <button id="fullscreenBtn" class="fullscreen-btn p-2 rounded-full shadow-md transition text-blue-800 dark:text-yellow-300">
-                                <i class="fas fa-expand text-lg"></i>
-                            </button>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base mt-3 max-w-lg mx-auto">
-                            تصحيح الأخطاء المحاسبية | انضمام شريك | المصروفات النثرية | التسويات البنكية
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-900 text-gray-300 pt-10 pb-6 mt-12 border-t border-gray-800/60">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="text-center md:text-right">
-                    <div class="flex items-center gap-2 justify-center md:justify-start">
-                        <i class="fas fa-university text-yellow-500 text-xl"></i>
-                        <span class="text-white font-bold text-sm">جامعة الزقازيق الأهلية</span>
-                    </div>
-                    <p class="text-xs text-gray-400 mt-2">© 2026 كلية التجارة - جميع الحقوق محفوظة</p>
-                </div>
-                
-                <div class="flex flex-col items-center gap-2">
-                    <div class="flex items-center gap-1 text-sm bg-gray-800/50 px-4 py-2 rounded-full">
-                        <i class="fas fa-code text-blue-400"></i>
-                        <span class="font-medium text-gray-200">Developed by Khaled Hamdy</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-xs text-gray-400">
-                        <i class="fas fa-phone-alt"></i>
-                        <span dir="ltr">+201112141562</span>
-                    </div>
-                </div>
-
-                <div class="flex gap-5">
-                    <a href="https://chat.whatsapp.com/B88WZZ3dM5O7r4xQoMRdMl" target="_blank" rel="noopener noreferrer" class="footer-link text-gray-400 hover:text-green-400 text-2xl transition-transform inline-block">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=61579862574654" target="_blank" rel="noopener noreferrer" class="footer-link text-gray-400 hover:text-blue-400 text-2xl transition-transform inline-block">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="text-center text-[11px] text-gray-500 mt-6 pt-4 border-t border-gray-800/40">
-                منصة تعليمية متخصصة لطلاب كلية التجارة – جامعة الزقازيق الأهلية
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const splash = document.getElementById('splash-screen');
-        if (splash) {
-            setTimeout(() => {
-                splash.style.opacity = '0';
-                setTimeout(() => {
-                    splash.style.visibility = 'hidden';
-                    splash.remove();
-                }, 600);
-            }, 1800);
-        }
-
-        (function(){
-            const btn = document.getElementById('darkModeBtn');
-            const icon = document.getElementById('darkIcon');
-            const html = document.documentElement;
-
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                html.classList.add('dark');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                html.classList.remove('dark');
-                icon.classList.add('fa-moon');
-                icon.classList.remove('fa-sun');
-            }
-
-            btn.addEventListener('click', () => {
-                if (html.classList.contains('dark')) {
-                    html.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                } else {
-                    html.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                }
-            });
-        })();
-
-        const iframe = document.getElementById('youtubeFrame');
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                if (iframe.requestFullscreen) {
-                    iframe.requestFullscreen();
-                } else if (iframe.webkitRequestFullscreen) {
-                    iframe.webkitRequestFullscreen();
-                } else if (iframe.msRequestFullscreen) {
-                    iframe.msRequestFullscreen();
-                }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                }
-            }
-        }
-
-        fullscreenBtn.addEventListener('click', toggleFullscreen);
-    </script>
+<script>
+    // إخفاء شاشة البداية (Splash Screen) بعد 1.8 ثانية
+    const splash = document.getElementById('splash-screen');
+    if(splash) { setTimeout(()=>{ splash.style.opacity='0'; setTimeout(()=>{ splash.style.visibility='hidden'; splash.remove(); },600); },1800); }
+    
+    // نظام الوضع الليلي (Dark Mode) مع حفظ الحالة في LocalStorage
+    (function(){ const btn=document.getElementById('darkModeBtn'); const icon=document.getElementById('darkIcon'); const html=document.documentElement; const saved=localStorage.getItem('theme'); if(saved==='dark'){ html.classList.add('dark'); icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); } else { html.classList.remove('dark'); icon.classList.add('fa-moon'); icon.classList.remove('fa-sun'); } btn.addEventListener('click',()=>{ if(html.classList.contains('dark')){ html.classList.remove('dark'); localStorage.setItem('theme','light'); icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); } else { html.classList.add('dark'); localStorage.setItem('theme','dark'); icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); } }); })();
+    
+    // تفعيل أزرار إظهار/إخفاء حل التمارين
+    document.querySelectorAll('.solution-toggle').forEach(btn=>{ btn.addEventListener('click',()=>{ const target=btn.getAttribute('data-target'); const sol=document.getElementById(target); if(sol){ sol.classList.toggle('show'); btn.innerHTML = sol.classList.contains('show') ? '<i class="fas fa-eye-slash ml-1"></i> إخفاء الحل' : '<i class="fas fa-eye ml-1"></i> عرض الحل'; } }); });
+</script>
 </body>
-</html>
+    </html>
