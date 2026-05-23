@@ -142,7 +142,6 @@
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
-<!-- شاشة البداية المؤقتة (Splash Screen) -->
 <div id="splash-screen">
     <div class="splash-content">
         <div class="splash-icon"><i class="fas fa-chart-line"></i></div>
@@ -152,7 +151,6 @@
     </div>
 </div>
 
-<!-- رأس الصفحة (Header) -->
 <header class="fixed top-0 left-0 right-0 z-50 glass-header shadow-sm transition-all">
     <div class="container mx-auto px-5 md:px-8 py-3 flex items-center justify-between">
         <div class="flex items-center gap-3">
@@ -164,33 +162,30 @@
 </header>
 
 <main class="pt-20">
-    <!-- القسم الترحيبي (Hero Section) -->
     <section class="hero-gradient text-white py-12 md:py-20 lg:py-24">
         <div class="container mx-auto px-6 text-center">
-            <div class="animate-hero">
-                <h2 class="hero-title text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4">📊 الرياضيات المالية والاستثمار <span class="text-yellow-300">Financial Mathematics</span></h2>
-                <p class="text-base md:text-lg lg:text-xl max-w-2xl mx-auto opacity-90 mt-2">شرح مبسط لكل فصل: القوانين، مدلولات الرموز، شرح تفصيلي، ثم تمارين محلولة – إعداد خصيصاً لطلاب كلية التجارة جامعة الزقازيق الأهلية (الامتحان بالانجليزي، الشرح ثنائي اللغة).</p>
+            <div>
+                <h2 class="hero-title text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4"><i class="fas fa-chart-line ml-3"></i> الرياضيات المالية والاستثمار <span class="text-yellow-300">Financial Mathematics</span></h2>
+                <p class="text-base md:text-lg lg:text-xl max-w-2xl mx-auto opacity-90 mt-2">شرح مبسط لكل فصل: القوانين، مدلولات الرموز، شرح تفصيلي، ثم تمارين محلولة – إعداد خصيصاً لطلاب كلية التجارة جامعة الزقازيق الأهلية</p>
             </div>
         </div>
     </section>
 
     <div class="container mx-auto px-5 py-10 space-y-12 max-w-6xl">
         
-        <!-- 1️⃣ الفصل الأول: الفائدة البسيطة (Simple Interest) -->
         <div class="chapter-card p-6">
             <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5">
                 <i class="fas fa-percent text-2xl text-yellow-600"></i>
-                <h2 class="text-2xl font-bold text-blue-900 dark:text-white">📘 الفصل الأول: الفائدة البسيطة (Simple Interest)</h2>
+                <h2 class="text-2xl font-bold text-blue-900 dark:text-white">الفصل الأول: الفائدة البسيطة (Simple Interest)</h2>
             </div>
-            <!-- ✅ تم تحديث الفيديو هنا بالرابط الجديد -->
             <div class="mb-6">
-                <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/GuSW7xTkYIU" title="شرح الفائدة البسيطة (Simple Interest) - رياضيات مالية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/GuSW7xTkYIU" title="الفائدة البسيطة" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="space-y-5">
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📌 القوانين (Laws)</h3><div class="formula-box">I = p × r × t</div><div class="formula-box">S = p + I = p (1 + r t)</div></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🔠 مدلولات الرموز (Notation)</h3><div class="term-grid"><div class="term-item"><span class="font-mono font-bold">I</span><span>Simple Interest / الفائدة البسيطة</span></div><div class="term-item"><span class="font-mono font-bold">p</span><span>Principal / أصل المال (القيمة الحالية)</span></div><div class="term-item"><span class="font-mono font-bold">r</span><span>Annual interest rate / سعر الفائدة السنوي</span></div><div class="term-item"><span class="font-mono font-bold">t</span><span>Time in years / الزمن بالسنوات</span></div><div class="term-item"><span class="font-mono font-bold">S</span><span>Future value / القيمة المستقبلية</span></div></div></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📖 الشرح المفصل (Detailed Explanation)</h3><p class="text-gray-700 dark:text-gray-200 leading-relaxed">الفائدة البسيطة هي فائدة تحسب على أصل المال فقط طوال فترة القرض. يستخدم القانون <span class="font-mono bg-gray-200 dark:bg-gray-700 px-1 rounded">I = p × r × t</span>. يجب تحويل الزمن إلى سنوات: إذا كان بالأشهر نقسم على 12، وإذا بالأيام نقسم على 365 (سنة بسيطة) أو 366 (كبيسة). يوم الإيداع يُحتسب ويوم السحب لا يُحتسب. القيمة المستقبلية هي أصل المال مضافاً إليه الفائدة: <span class="font-mono">S = p + I</span>.</p></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🧮 تمارين محلولة (Solved Exercises)</h3>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-book ml-2"></i> القوانين (Laws)</h3><div class="formula-box">I = p × r × t</div><div class="formula-box">S = p + I = p (1 + r t)</div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-font ml-2"></i> مدلولات الرموز (Notation)</h3><div class="term-grid"><div class="term-item"><span class="font-mono font-bold">I</span><span>الفائدة البسيطة (Simple Interest)</span></div><div class="term-item"><span class="font-mono font-bold">p</span><span>أصل المال (Principal)</span></div><div class="term-item"><span class="font-mono font-bold">r</span><span>سعر الفائدة السنوي (Annual rate)</span></div><div class="term-item"><span class="font-mono font-bold">t</span><span>الزمن بالسنوات (Time)</span></div><div class="term-item"><span class="font-mono font-bold">S</span><span>القيمة المستقبلية (Future value)</span></div></div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-info-circle ml-2"></i> الشرح المفصل</h3><p class="text-gray-700 dark:text-gray-200 leading-relaxed">الفائدة البسيطة تحسب على أصل المال فقط طوال فترة القرض. يستخدم القانون I = p × r × t. يجب تحويل الزمن إلى سنوات: إذا كان بالأشهر نقسم على 12، وإذا بالأيام نقسم على 365 (سنة بسيطة) أو 366 (كبيسة). يوم الإيداع يُحتسب ويوم السحب لا يُحتسب. القيمة المستقبلية S = p + I.</p></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-puzzle-piece ml-2"></i> تمارين محلولة</h3>
                     <div class="space-y-4">
                         <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between items-start flex-wrap"><div><span class="font-bold">تمرين 1:</span> أوجد الفائدة البسيطة على 1000$ لمدة 10 سنوات بسعر 10% سنوياً.</div><button class="solution-toggle text-sm px-3 py-1 rounded-full" data-target="s1"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s1" class="solution-content"><p class="font-bold">الحل:</p><p>I = 1000 × 0.10 × 10 = <strong>1000$</strong>.</p><p class="font-bold mt-1">Solution:</p><p>I = 1000 × 0.10 × 10 = $1000.</p></div></div>
                         <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 2:</span> قرض 100,000$ سدد 120,000$ بعد 180 يوم في سنة بسيطة (365 يوم). أوجد سعر الفائدة.</div><button class="solution-toggle" data-target="s2"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s2" class="solution-content"><p>I = 20000, t = 180/365 → r = I/(p·t) = 20000/(100000×180/365) = 0.4056 = <strong>40.56%</strong>.</p></div></div>
@@ -199,83 +194,54 @@
             </div>
         </div>
 
-        <!-- 2️⃣ الفصل الثاني: القيمة المستقبلية والفائدة العادية/الدقيقة (Future Value & Interest Types) -->
         <div class="chapter-card p-6">
-            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-chart-line text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">📈 الفصل الثاني: القيمة المستقبلية & أنواع الفائدة (Future Value & Interest Types)</h2></div>
-            <!-- فيديو القيمة المستقبلية الجزء الأول والثاني -->
+            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-chart-line text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">الفصل الثاني: القيمة المستقبلية وأنواع الفائدة</h2></div>
             <div class="mb-6 space-y-4">
-                <div>
-                    <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-2">🎥 الجزء الأول: شرح القيمة المستقبلية (Future Value)</h3>
-                    <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/QBzZghJ-vZ8" title="شرح القيمة المستقبلية (Future Value) - الجزء الأول" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-2">🎥 الجزء الثاني: شرح القيمة المستقبلية (Future Value) - تكملة</h3>
-                    <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/iMAY_J0Z67E" title="شرح القيمة المستقبلية (Future Value) - الجزء الثاني" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+                <div><h3 class="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-2"><i class="fas fa-video ml-2"></i> الجزء الأول: القيمة المستقبلية</h3><iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/QBzZghJ-vZ8" title="Future value part 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                <div><h3 class="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-2"><i class="fas fa-video ml-2"></i> الجزء الثاني: تكملة القيمة المستقبلية</h3><iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/iMAY_J0Z67E" title="Future value part 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
             </div>
             <div class="space-y-5">
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📌 القوانين</h3><div class="formula-box">S = p (1 + r t)</div><div class="formula-box">Iₒ = p × r × (d / 360) &nbsp;&nbsp;(Ordinary interest)</div><div class="formula-box">Iₑ = p × r × (d / 365) &nbsp;&nbsp;(Exact interest)</div></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🔠 مدلولات الرموز</h3><div class="term-grid"><div class="term-item"><span>d</span><span>عدد الأيام (number of days)</span></div><div class="term-item"><span>Iₒ</span><span>فائدة عادية (سنة 360 يوم)</span></div><div class="term-item"><span>Iₑ</span><span>فائدة دقيقة (سنة 365/366)</span></div></div></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📖 الشرح المفصل</h3><p class="text-gray-700 dark:text-gray-200">القيمة المستقبلية (S) هي المبلغ الكلي بعد إضافة الفائدة البسيطة. الفائدة العادية تستخدم سنة تجارية 360 يوماً، بينما الفائدة الدقيقة تستخدم السنة الفعلية 365 أو 366 يوماً. دائماً Iₒ أكبر من Iₑ، والنسبة بينهما 73/72. تستخدم البنوك أحياناً الحد الأدنى للرصيد الشهري أو اليومي لحساب الفائدة.</p></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🧮 تمارين</h3>
-                    <div class="space-y-4"><div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 1:</span> 500$ لمدة 60 يوم، 11% سنوياً. أوجد S , Iₒ , Iₑ.</div><button class="solution-toggle" data-target="s21"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s21" class="solution-content"><p>S = 500(1+0.11×60/365)=509.04$ , Iₒ = 500×0.11×60/360=9.17$ , Iₑ = 9.04$.</p></div></div>
-                    </div>
-                </div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-book ml-2"></i> القوانين</h3><div class="formula-box">S = p (1 + r t)</div><div class="formula-box">Iₒ = p × r × (d / 360) (فائدة عادية)</div><div class="formula-box">Iₑ = p × r × (d / 365) (فائدة دقيقة)</div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-font ml-2"></i> الرموز</h3><div class="term-grid"><div class="term-item"><span>d</span><span>عدد الأيام (days)</span></div><div class="term-item"><span>Iₒ</span><span>فائدة عادية (سنة 360)</span></div><div class="term-item"><span>Iₑ</span><span>فائدة دقيقة (سنة 365/366)</span></div></div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-info-circle ml-2"></i> الشرح</h3><p class="text-gray-700 dark:text-gray-200">القيمة المستقبلية S = p(1+rt). الفائدة العادية تستخدم سنة 360 يوماً، والفائدة الدقيقة تستخدم السنة الفعلية. دائماً Iₒ > Iₑ، والنسبة بينهما 73/72.</p></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-puzzle-piece ml-2"></i> تمارين</h3><div class="space-y-4"><div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين:</span> 500$ لمدة 60 يوم، 11% سنوياً. أوجد S , Iₒ , Iₑ.</div><button class="solution-toggle" data-target="s21"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s21" class="solution-content"><p>S = 509.04$ , Iₒ = 9.17$ , Iₑ = 9.04$.</p></div></div></div></div>
             </div>
         </div>
 
-        <!-- 3️⃣ الفصل الثالث: الفائدة المركبة (Compound Interest) -->
         <div class="chapter-card p-6">
-            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-chart-simple text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">📊 الفصل الثالث: الفائدة المركبة (Compound Interest)</h2></div>
-            <!-- فيديو الفائدة المركبة (سيتم تحديثه لاحقاً عند توفره) -->
-            <div class="mb-6">
-                <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/PLACEHOLDER" title="فيديو شرح الفائدة المركبة - سيتم تحديثه لاحقاً" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <p class="text-gray-500 dark:text-gray-400 text-sm mt-2 text-center">⚠️ سيتم إضافة فيديو شرح الفائدة المركبة قريباً</p>
-            </div>
+            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-chart-simple text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">الفصل الثالث: الفائدة المركبة (Compound Interest)</h2></div>
+            <div class="mb-6"><iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/PLACEHOLDER" title="Compound interest placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p class="text-gray-500 dark:text-gray-400 text-sm mt-2 text-center">فيديو شرح الفائدة المركبة سيضاف لاحقاً</p></div>
             <div class="space-y-5">
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📌 القوانين</h3><div class="formula-box">S = p (1 + i)ⁿ</div><div class="formula-box">p = S (1 + i)⁻ⁿ</div><div class="formula-box">i = jₘ / m  (سعر الفائدة لكل فترة)</div><div class="formula-box">المعدل الفعلي السنوي: 1 + j = (1 + i)ᵐ</div></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🔠 الرموز</h3><div class="term-grid"><div class="term-item"><span>i</span><span>Interest rate per period / سعر الفترة</span></div><div class="term-item"><span>n</span><span>Number of periods / عدد الفترات</span></div><div class="term-item"><span>jₘ</span><span>Nominal rate convertible m times per year</span></div><div class="term-item"><span>j</span><span>Effective annual rate / المعدل الفعلي</span></div></div></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📖 الشرح</h3><p class="text-gray-700 dark:text-gray-200">في الفائدة المركبة تضاف الفائدة إلى أصل المال في نهاية كل فترة وتحسب الفائدة على المبلغ الجديد. المبلغ المستقبلي S = p(1+i)ⁿ. كلما زاد عدد فترات التحويل (شهرية، ربع سنوية) زادت القيمة المستقبلية. المعدل الفعلي يعبر عن العائد الحقيقي بعد التحويلات.</p></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🧮 تمارين</h3>
-                    <div class="space-y-4"><div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 1:</span> استثمر 1000$ لمدة 3 سنوات بفائدة 8% سنوية مركبة. أوجد S.</div><button class="solution-toggle" data-target="s31"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s31" class="solution-content"><p>S = 1000(1.08)³ = 1259.71$ ، الفائدة المركبة = 259.71$.</p></div></div>
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 2:</span> 1000$ لمدة سنتين بفائدة 10% مركبة نصف سنوية.</div><button class="solution-toggle" data-target="s32"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s32" class="solution-content"><p>i = 0.05 , n = 4 , S = 1000(1.05)⁴ = 1215.51$.</p></div></div>
-                    </div>
-                </div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-book ml-2"></i> القوانين</h3><div class="formula-box">S = p (1 + i)ⁿ</div><div class="formula-box">p = S (1 + i)⁻ⁿ</div><div class="formula-box">i = jₘ / m ,  1+j = (1+i)ᵐ</div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-font ml-2"></i> الرموز</h3><div class="term-grid"><div class="term-item"><span>i</span><span>سعر الفترة</span></div><div class="term-item"><span>n</span><span>عدد الفترات</span></div><div class="term-item"><span>jₘ</span><span>المعدل الاسمي</span></div><div class="term-item"><span>j</span><span>المعدل الفعلي</span></div></div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-info-circle ml-2"></i> الشرح</h3><p class="text-gray-700 dark:text-gray-200">في الفائدة المركبة تضاف الفائدة إلى أصل المال في نهاية كل فترة وتحسب الفائدة على المبلغ الجديد. كلما زاد عدد فترات التحويل زادت القيمة المستقبلية.</p></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-puzzle-piece ml-2"></i> تمارين</h3><div class="space-y-4"><div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 1:</span> 1000$ لمدة 3 سنوات بفائدة 8% سنوية مركبة.</div><button class="solution-toggle" data-target="s31"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s31" class="solution-content"><p>S = 1259.71$ ، الفائدة = 259.71$.</p></div></div>
+                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 2:</span> 1000$ لمدة سنتين بفائدة 10% مركبة نصف سنوية.</div><button class="solution-toggle" data-target="s32"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s32" class="solution-content"><p>S = 1215.51$.</p></div></div></div></div>
             </div>
         </div>
 
-        <!-- 4️⃣ الفصل الرابع: القيمة الحالية والخصم البسيط (Present Value & Simple Discount) -->
         <div class="chapter-card p-6">
-            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-tag text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">💰 الفصل الرابع: القيمة الحالية والخصم البسيط (Present Value & Simple Discount)</h2></div>
-            <!-- فيديو القيمة الحالية والخصم البسيط (سيتم تحديثه لاحقاً عند توفره) -->
-            <div class="mb-6">
-                <iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/PLACEHOLDER" title="فيديو شرح القيمة الحالية والخصم البسيط - سيتم تحديثه لاحقاً" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <p class="text-gray-500 dark:text-gray-400 text-sm mt-2 text-center">⚠️ سيتم إضافة فيديو شرح القيمة الحالية والخصم البسيط قريباً</p>
-            </div>
+            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-tag text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">الفصل الرابع: القيمة الحالية والخصم البسيط</h2></div>
+            <div class="mb-6"><iframe class="w-full aspect-video rounded-xl shadow-md" src="https://www.youtube.com/embed/PLACEHOLDER" title="Present value placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p class="text-gray-500 dark:text-gray-400 text-sm mt-2 text-center">فيديو شرح القيمة الحالية سيضاف لاحقاً</p></div>
             <div class="space-y-5">
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📌 القوانين</h3><div class="formula-box">p = S / (1 + r t)</div><div class="formula-box">D = S × d × t</div><div class="formula-box">p = S (1 – d t)</div><div class="formula-box">العلاقة بين r و d : r = d / (1 – d t) , d = r / (1 + r t)</div></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🔠 الرموز</h3><div class="term-grid"><div class="term-item"><span>D</span><span>Simple discount / الخصم البسيط</span></div><div class="term-item"><span>d</span><span>Annual discount rate / سعر الخصم السنوي</span></div></div></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">📖 الشرح</h3><p class="text-gray-700 dark:text-gray-200">القيمة الحالية هي المبلغ الذي يجب استثماره اليوم للحصول على قيمة مستقبلية معينة. الخصم البسيط هو تخفيض من القيمة المستقبلية بسعر خصم d. السعر المدفوع (القيمة الحالية) = S – D. هناك علاقة تحويل بين سعر الخصم وسعر الفائدة.</p></div>
-                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300">🧮 تمارين</h3>
-                    <div class="space-y-4"><div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 1:</span> ما القيمة الحالية لمبلغ 20000$ يستحق بعد 18 شهراً بسعر فائدة 9% بسيطة.</div><button class="solution-toggle" data-target="s41"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s41" class="solution-content"><p>p = 20000/(1+0.09×1.5) = 20000/1.135 = 17621.15$.</p></div></div>
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 2:</span> سند قيمته 100000$ يستحق بعد 59 يوماً بسعر خصم 5%. أوجد الخصم والسعر.</div><button class="solution-toggle" data-target="s42"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s42" class="solution-content"><p>D = 100000×0.05×59/365 = 808.22$ , p = 100000 – 808.22 = 99191.78$.</p></div></div>
-                    </div>
-                </div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-book ml-2"></i> القوانين</h3><div class="formula-box">p = S / (1 + r t)</div><div class="formula-box">D = S × d × t</div><div class="formula-box">p = S (1 – d t)</div><div class="formula-box">r = d / (1 – d t) ,  d = r / (1 + r t)</div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-font ml-2"></i> الرموز</h3><div class="term-grid"><div class="term-item"><span>D</span><span>الخصم البسيط</span></div><div class="term-item"><span>d</span><span>سعر الخصم السنوي</span></div></div></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-info-circle ml-2"></i> الشرح</h3><p class="text-gray-700 dark:text-gray-200">القيمة الحالية هي المبلغ المستثمر اليوم للحصول على قيمة مستقبلية محددة. الخصم البسيط هو تخفيض من القيمة المستقبلية بسعر خصم d.</p></div>
+                <div><h3 class="text-xl font-bold text-blue-800 dark:text-blue-300"><i class="fas fa-puzzle-piece ml-2"></i> تمارين</h3><div class="space-y-4"><div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 1:</span> القيمة الحالية لـ 20000$ بعد 18 شهراً بسعر 9% بسيطة.</div><button class="solution-toggle" data-target="s41"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s41" class="solution-content"><p>p = 17621.15$.</p></div></div>
+                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين 2:</span> سند 100000$ بعد 59 يوماً بخصم 5%.</div><button class="solution-toggle" data-target="s42"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="s42" class="solution-content"><p>D = 808.22$ , p = 99191.78$.</p></div></div></div></div>
             </div>
         </div>
 
-        <!-- 5️⃣ معادلات القيمة (Equations of Value) -->
         <div class="chapter-card p-6">
-            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-balance-scale text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">⚖️ معادلات القيمة (Equations of Value)</h2></div>
+            <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-3 mb-5"><i class="fas fa-balance-scale text-2xl text-yellow-600"></i><h2 class="text-2xl font-bold text-blue-900 dark:text-white">معادلات القيمة (Equations of Value)</h2></div>
             <div class="space-y-4">
                 <p class="text-gray-700 dark:text-gray-200">عند مقارنة مبالغ مستحقة في تواريخ مختلفة، نستخدم تاريخ محوري (focal date) ونحرك الأموال للأمام (بالضرب في (1+rt)) أو للخلف (بالقسمة). مبدأ تكافؤ القيم: قيمة المدفوعات = قيمة الديون في التاريخ المحوري.</p>
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين نموذجي:</span> شخص عليه 500$ بعد 3 شهور و 200$ بعد 6 شهور. دفع 300$ حالاً. كم يدفع بعد سنة لتصفية الدين؟ (سعر الفائدة 10% بسيطة)</div><button class="solution-toggle" data-target="seq"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="seq" class="solution-content"><p>تاريخ محوري بعد سنة: 300(1+0.10×1) + X = 500(1+0.10×9/12) + 200(1+0.10×6/12) → 330 + X = 537.5 + 210 → X = <strong>417.5$</strong>.</p></div></div>
+                <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex justify-between"><div><span class="font-bold">تمرين نموذجي:</span> شخص عليه 500$ بعد 3 شهور و 200$ بعد 6 شهور. دفع 300$ حالاً. كم يدفع بعد سنة؟ (10% بسيطة)</div><button class="solution-toggle" data-target="seq"><i class="fas fa-eye ml-1"></i> عرض الحل</button></div><div id="seq" class="solution-content"><p>X = 417.5$.</p></div></div>
             </div>
         </div>
     </div>
 </main>
 
-<!-- تذييل الصفحة (Footer) -->
 <footer class="bg-gray-900 text-gray-300 pt-10 pb-6 mt-12 border-t border-gray-800/60">
     <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -288,15 +254,10 @@
 </footer>
 
 <script>
-    // إخفاء شاشة البداية (Splash Screen) بعد 1.8 ثانية
     const splash = document.getElementById('splash-screen');
     if(splash) { setTimeout(()=>{ splash.style.opacity='0'; setTimeout(()=>{ splash.style.visibility='hidden'; splash.remove(); },600); },1800); }
-    
-    // نظام الوضع الليلي (Dark Mode) مع حفظ الحالة في LocalStorage
     (function(){ const btn=document.getElementById('darkModeBtn'); const icon=document.getElementById('darkIcon'); const html=document.documentElement; const saved=localStorage.getItem('theme'); if(saved==='dark'){ html.classList.add('dark'); icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); } else { html.classList.remove('dark'); icon.classList.add('fa-moon'); icon.classList.remove('fa-sun'); } btn.addEventListener('click',()=>{ if(html.classList.contains('dark')){ html.classList.remove('dark'); localStorage.setItem('theme','light'); icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); } else { html.classList.add('dark'); localStorage.setItem('theme','dark'); icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); } }); })();
-    
-    // تفعيل أزرار إظهار/إخفاء حل التمارين
     document.querySelectorAll('.solution-toggle').forEach(btn=>{ btn.addEventListener('click',()=>{ const target=btn.getAttribute('data-target'); const sol=document.getElementById(target); if(sol){ sol.classList.toggle('show'); btn.innerHTML = sol.classList.contains('show') ? '<i class="fas fa-eye-slash ml-1"></i> إخفاء الحل' : '<i class="fas fa-eye ml-1"></i> عرض الحل'; } }); });
 </script>
 </body>
-    </html>
+                     </html>
